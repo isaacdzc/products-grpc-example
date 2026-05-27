@@ -51,8 +51,8 @@ export class ProductController {
         return this.mapProductToResponse(product);
     }
 
-    @GrpcMethod('ProductService', 'RemoveProduct')
-    async removeProduct(data: { id: string }) {
+    @GrpcMethod('ProductService', 'DeleteProduct')
+    async deleteProduct(data: { id: string }) {
         const product = await this.productService.remove(data.id);
         return this.mapProductToResponse(product);
     }
